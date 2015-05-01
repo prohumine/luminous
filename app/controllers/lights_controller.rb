@@ -1,4 +1,6 @@
 class LightsController < ApplicationController
+	before_action :set_customer
+	
   def new
   end
 
