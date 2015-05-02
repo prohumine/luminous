@@ -37,7 +37,11 @@ class CustomersController < ApplicationController
   def destroy
   	@customer = Customer.find(params[:id])
   	@customer.destroy
-  	@cusomer.destroy? redirect_to customers_path : notice: 'Customer not found'
+    if @customer.destroy?
+      redirect_to customer_path
+    else
+      notice: 'Customer not found'
+    end
   end
 
   private
