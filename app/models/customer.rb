@@ -1,6 +1,6 @@
 class Customer < ActiveRecord::Base
 	belongs_to :user, dependent: :destroy
-	has many :lights
+	has_many :lights
 
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
@@ -12,5 +12,5 @@ class Customer < ActiveRecord::Base
 	validates :phone, presence: true, length: { is: 10 },
 	                  numericality: { only_integer: true }
 
-	validates :address, presence: true,
+	validates :address, presence: true
 end
