@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150504233439) do
 
   create_table "lights", force: true do |t|
     t.integer  "amount"
-    t.string   "type"
+    t.string   "light_type"
     t.string   "colors"
     t.integer  "amount_replaced"
     t.boolean  "our_stringer"

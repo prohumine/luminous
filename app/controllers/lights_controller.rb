@@ -20,6 +20,6 @@ class LightsController < ApplicationController
   private
 
   def light_params
-  	params.require(:lights).permit(:name, :email, :phone, :address)
+  	params.require(:lights).permit(:amount, :light_type, :colors, :amount_replaced, :our_stringer, :comments)
   end
 end
