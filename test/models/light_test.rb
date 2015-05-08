@@ -3,7 +3,8 @@ require 'test_helper'
 class LightTest < ActiveSupport::TestCase
 
   def setup
-  	@light = Light.new(amount: 100, light_type: 'C7', colors: 'White and Red', amount_replaced: 1, our_stringer: true, comments: "Start from bottom right")
+  	@light = Light.new(amount: 100, light_type: 'C7', colors: 'White and Red',
+  	                   amount_replaced: 1, our_stringer: true, comments: "Start from bottom right")
   end
 
   test "Light should be valid" do
@@ -33,5 +34,15 @@ class LightTest < ActiveSupport::TestCase
   test "our_stringer should be boolean" do
   	@light.our_stringer == true || false
   	assert @light.valid?
+  end
+
+  test "light_type can't be too long" do
+  	@light.light_type = 'a' * 256
+  	assert_not @light.valid?
+  end
+
+  test "colors can't be too long" do
+  	@light.colors = 'a' * 256
+  	assert_not @light.valid?
   end
 end
