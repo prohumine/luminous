@@ -10,22 +10,28 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
- 
-$gray-medium-light: #eaeaea;
- 
-@mixin box_sizing {
-  -moz-box-sizing:    border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing:         border-box;
-}
+
+@import "customers";
+@import "lights";
+@import "users";
 
 .debug_dump {
+
+	background-color: $gray-medium-light;
   clear: both;
   float: left;
   width: 100%;
   margin-top: 45px;
   @include box_sizing;
+}
+
+.errors {
+	background-color: lighten(#d9534f, 25%);
+	border: 2px solid darken(#d9534f, 10%);
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: left;
 }
