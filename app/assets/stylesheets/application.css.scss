@@ -35,3 +35,16 @@
 	margin-right: auto;
 	text-align: left;
 }
+.success {
+	width: 80%;
+	margin-left: auto;
+	margin-right:auto;
+	background-color: #dff0d8;
+	color: #3c763d;
+	border: 2px solid #d6e9c6;
+	height: 4em;
+
+	p {
+		margin-left: 2em;
+	}
+}
