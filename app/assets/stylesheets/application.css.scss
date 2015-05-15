@@ -16,6 +16,22 @@
 @import "customers";
 @import "lights";
 @import "users";
+@import "sessions";
+
+
+@mixin alerts($bgcolor, $color) {
+	width: 80%;
+	margin-left: auto;
+	margin-right:auto;
+	background-color: $bgcolor;
+	color: $color;
+	border: 2px solid darken($bgcolor, 5%);
+	height: 4em;
+
+	p {
+		margin-left: 2em;
+	}
+}
 
 .debug_dump {
 
@@ -35,16 +51,10 @@
 	margin-right: auto;
 	text-align: left;
 }
-.success {
-	width: 80%;
-	margin-left: auto;
-	margin-right:auto;
-	background-color: #dff0d8;
-	color: #3c763d;
-	border: 2px solid #d6e9c6;
-	height: 4em;
 
-	p {
-		margin-left: 2em;
-	}
+.alert-success {
+  @include alerts(#dff0d8, #3c763d);
+}
+.alert-danger {
+  @include alerts(#f2dede, #a94442)
 }

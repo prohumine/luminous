@@ -19,20 +19,27 @@ $gray-medium-light: #eaeaea;
   box-sizing:         border-box;
 }
 
-#signup {
-  
-  margin-top: 20px;
+@mixin forms {
+	margin-top: 20px;
 	margin-left: auto;
 	margin-right: auto;
 	width: 30%;
 	border: 2px solid black;
 	text-align: center;
+}
 
+@mixin inputing {
+	width: 90%;
+  height: 2em;
+	border: 1px solid black;
+	text-align: center;
+}
+
+#signup {
+  @include forms;
+  
 	.input {
-		width: 90%;
-		height: 2em;
-		border: 1px solid black;
-		text-align: center;
+		@include inputing;
 	}
 
 	.text {
