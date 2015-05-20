@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  include SessionsHelper
 
   def index
   	@users = User.all
@@ -12,8 +13,9 @@ class UsersController < ApplicationController
   	@user = User.new(user_params)
   	if @user.save
       log_in @user
+      
   		redirect_to @user
-      flash[:succes] = "Successfully signed up welcome #{@user.name}"
+      flash[:success] = "Successfully signed up welcome #{@user.name}"
   	else
   		render 'new'
   	end

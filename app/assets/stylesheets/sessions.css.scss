@@ -16,4 +16,8 @@
 	.button {
 	  @include all_buttons;
   }
+
+  .check {
+  	display: inline-block;
+  }
 }
