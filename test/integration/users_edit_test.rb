@@ -11,11 +11,6 @@ class UsersEditTest < ActionDispatch::IntegrationTest
     get edit_user_path(@user)
   end
 
-  test "successful edit" do
-    log_in_as(@user)
-    get edit_user_path(@user)
-  end
-
   test "successful edit with friendly forwarding" do
     get edit_user_path(@user)
     log_in_as(@user)

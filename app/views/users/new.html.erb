@@ -1,13 +1,7 @@
-<div id='signup'>
+<div id='userform'>
   <h1 class='text'>Sign up</h1>
   <%= form_for(@user) do |f| %>
-    <%= render 'shared/error_messages' %>
-
-	  <p><%= f.text_field :name, placeholder: 'Name', class: 'input' %></p>
-	  <p><%= f.email_field :email, placeholder: 'Example@example.com', class: 'input' %></p>
-	  <p><%= f.password_field :password, placeholder: 'Password minimum 6 characters', class: 'input' %></p>
-	  <p><%= f.password_field :password_confirmation, placeholder: 'Confirm password', class: 'input' %></p>
-
+    <%= render 'partial', f: f %>
     <h6><%= f.submit 'Sign up', class: 'button input' %></h6>
   <% end %>
 </div>

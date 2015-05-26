@@ -1,2 +1,7 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div id='userform'>
+  <h1 class='text'>Edit</h1>
+  <%= form_for(@user) do |f| %>
+    <%= render 'partial', f: f %>
+    <h6><%= f.submit 'Update', class: 'button input' %></h6>
+  <% end %>
+</div>
