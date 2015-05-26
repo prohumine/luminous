@@ -1,5 +1,8 @@
 <div>
+	<% if logged_in? %>
     <%= link_to "Log out", logout_path, method: :delete %>
     <%= link_to "Home", root_path %>
-    <%= link_to "Profile", user_path(current_user) %>
+  <% else %>
+    <%= @user.name %>
+  <% end %>
 </div>
