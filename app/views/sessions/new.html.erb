@@ -5,6 +5,7 @@
     <p><%= f.email_field :email, placeholder: 'User@domain.com', class: 'input' %></p>
     <p><%= f.password_field :password, placeholder: 'Password', class: 'input'%></p>
     <p><%= f.check_box :remember_me %><span class='check'>Remember me on this computer</span></p>
+    <p>Don't have an account?&nbsp<%= link_to 'Sign up', signup_path %></p>
 
     <h6><%= f.submit "Log in", class: 'button input' %></h6>
   <% end %>
