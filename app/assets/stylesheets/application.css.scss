@@ -62,3 +62,6 @@
 .alert-info {
 	@include alerts(#d9edf7, #31708f)
 }
+.alert-warning {
+	@include alerts(#fcf8e3, #8a6d3b)
+}
