@@ -1,9 +1,10 @@
 class User < ActiveRecord::Base
-	attr_accessor :remember_token
+	attr_accessor :remember_token, :activation_token
 	has_many :customers
 	has_many :lights, through: :customers
 
-	before_save :email_downcase, on: :create
+	before_save   :downcase_email
+	before_create :create_activation_digest
 
 	validates :name, presence: true, length: { maximum: 50 }
 	VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -14,7 +15,7 @@ class User < ActiveRecord::Base
 	has_secure_password
 	validates :password, length: { minimum: 6 }, allow_blank: true
 
-	def email_downcase
+	def downcase_email
 		self.email = email.downcase
 	end
 
@@ -45,5 +46,10 @@ class User < ActiveRecord::Base
   # Forgets a user.
   def forget
     update_attribute(:remember_digest, nil)
+  end
+
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest(activation_token)
   end
 end

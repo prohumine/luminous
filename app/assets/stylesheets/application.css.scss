@@ -27,6 +27,7 @@
 	color: $color;
 	border: 2px solid darken($bgcolor, 5%);
 	height: 4em;
+	border-radius: 5px;
 
 	p {
 		margin-left: 2em;
@@ -57,4 +58,7 @@
 }
 .alert-danger {
   @include alerts(#f2dede, #a94442)
+}
+.alert-info {
+	@include alerts(#d9edf7, #31708f)
 }
